@@ -1,13 +1,14 @@
-import Details from './component/Details'
+import Details from './component/Details.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Booking from './component/Booking'
-import Time from './component/Time'
-import First_visit_check from "./component/First_visit_check"
-import Review_confirm from './component/Review_confirm'
-import Appointment from "./component/Appointment"
-import User_profile from "./component/User_profile"
-import Select_professional from './component/select_professional'  
-import Reschedule_appointments from './component/Reschedule_appointments'
+import Booking from './component/Booking.jsx'
+import Time from './component/Time.jsx'
+import First_visit_check from "./component/First_visit_check.jsx"
+import Review_confirm from './component/Review_confirm.jsx'
+import Appointment from "./component/Appointment.jsx"
+import User_profile from "./component/User_profile.jsx"
+import Select_professional from './component/select_professional.jsx'  
+import Reschedule_appointments from './component/Reschedule_appointments.jsx'
+
 
 function App() {
 
