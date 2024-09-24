@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.user-profile-wrapper{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+.main-my-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.content-myprofile{
+    width: 70vw;
+    height: 400vh;
+    display: flex;
+    justify-content: space-around;
+    gap: -50px;
+
+}
+.left-my-profile{
+    height: 30%;
+    width: 35%;
+    border: 1px solid rgba(0, 0, 0, 0.382);
+    border-radius: 20px;
+
+}
+.right-profile-container{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.right-my-profile{
+    height: 350px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.382);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+#facebook-div{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    
+}
+
+/* =========== left profile ========== */
+.profile-container {
+    background-color: #ffffff00;
+    width: 100%;
+    padding: 20px;
+    }
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 200px;
+    border-bottom: 1px solid;
+}
+
+.profile-image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #e0e0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-image img {
+    width: 50px;
+    height: 50px;
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.edit-icon img {
+    width: 12px;
+    height: 12px;
+}
+
+.profile-name {
+    flex-grow: 1;
+}
+
+.profile-name h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.edit-link {
+    color: #7d59d1;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.profile-details {
+    margin-top: 20px;
+}
+
+.profile-detail {
+    margin-bottom: 15px;
+}
+
+.profile-detail span {
+    display: block;
+    color: black;
+    font-size: 18px;
+}
+
+.profile-detail p {
+    font-size: 18px;
+    color: black;
+}

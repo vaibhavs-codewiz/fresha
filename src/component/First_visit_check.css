@@ -1,0 +1,78 @@
+#check-div{
+  height: 90%;
+  width: 55%;
+  align-self: center;
+  .innercheck-div{
+    position: relative;
+    top: 10%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    h2{
+        font-size: 45px;
+        font-weight:bolder;
+    }
+    .check{
+        border: 1px solid rgba(19, 18, 18, 0.345);
+        padding: 30px;
+        border-radius: 20px;
+    }
+    .value,.value2{
+      display: none;
+    }
+  }
+}
+
+/* ============ css for review confirm ========== */
+
+.form-children{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.check, .check2{
+        border: 1px solid rgba(19, 18, 18, 0.136);
+        padding: 30px;
+        border-radius: 20px;
+        
+}
+.review-form{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.plus-ip{
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  border: 1px solid rgba(0, 0, 0, 0.315);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: px;
+}
+
+.radio{
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+
+}
+input[type="radio"] {
+  appearance: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-radio {
+  
+  display: inline-block;
+  position: relative;
+}
+
+input[type="radio"]:checked + .custom-radio {
+  color: green;
+}
+

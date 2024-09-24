@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: blue;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  z-index: 1000;
+}
+
+.search-btn {
+  display: none;
+}
+
+.form-div {
+  height: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+}
+
+.inp {
+  border-right: 1px solid rgba(0, 0, 0, 0.344);
+  padding-left: 20px;
+}
+
+.dropdown {
+  height: 50%;
+  width: 100px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.344);
+  border-radius: 30px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: calc(100vh - 100px); /* Full height minus the fixed nav */
+  margin-top: 100px; /* Space for the fixed nav */
+  position: relative;
+}
+
+.left {
+  height: 100%; /* Ensure left column takes full height */
+  width: 30vw;
+  position: relative;
+  left: 7%;
+}
+
+.right {
+  height: 100%; /* Full height of the parent (main) */
+  width: 40vw;
+  overflow-y: auto; /* Only scroll vertically within the right div */
+  border: 1px solid rgba(0, 0, 0, 0.163);
+  right: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 10px; /* Padding inside the right content */
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  position: relative;   
+ 
+}
+
+.right-img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+.right-content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.right-confirm {
+  color: white;
+  width: 100px;
+  height: 60px;
+  border: 1px solid blue;
+  border-radius: 30px;
+  text-align: center;
+  background: blue;
+}
+
+.right-svg-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+}
+
+.svg-div {
+  width: 30px;
+  height: 30px;
+  background-color: lightgray;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.overview-div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.inner-overview{
+    display: flex;
+    justify-content: space-between;
+}
+.left-content{
+    border: 2px solid blue;
+    border-radius: 20px;
+    height: 125px;
+    width: 390px;
+    img{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+}
+.absolute-nav{
+    height: 40vh;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    gap: 10px;
+    position: absolute;
+    left: 250px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-radius: 20px;
+}
+.absolute-nav2{
+    height: 40vh;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    gap: 10px;
+    position: absolute;
+    left: 450px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-radius: 20px;
+}
+.absolute-nav3{
+    height: 40vh;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    gap: 10px;
+    position: absolute;
+    left: 700px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+}
+.absolute-nav4{
+    height: 40vh;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    gap: 10px;
+    position: absolute;
+    right: 330px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+}
+
+.absolute-div{
+    height: 80vh;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    gap: 10px;
+    position: absolute;
+    right: 50px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+
+}
+.hyperlinks-popup{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ====================== calender  ================= */
+
+
+body {
+    display: flex;
+   
+    min-height: 100vh;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-container {
+    background: #fff;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-container header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .calendar-navigation {
+    display: flex;
+}
+
+header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+    color: #aeabab;
+    font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+header .calendar-navigation span:hover {
+    background: #f2f2f2;
+}
+
+header .calendar-current-date {
+    font-weight: 500;
+    font-size: 1.45rem;
+}
+
+.calendar-body {
+    padding: 20px;
+}
+
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+.calendar-body .calendar-dates {
+    margin-bottom: 20px;
+}
+
+.calendar-body li {
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+    color: #414141;
+}
+
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar-body .calendar-dates li {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+    color: #aaa;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+}
+
+.calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+    background: #6332c5;
+}
+
+.calendar-dates li:not(.active):hover::before {
+    background: #e4e1e1;
+}
+
