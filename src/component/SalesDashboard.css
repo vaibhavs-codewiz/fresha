@@ -1,0 +1,163 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fb;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.top-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 257px;
+  height: 110px;
+}
+.svg-sales-dashboard{
+    height: 60px;
+    width: 60px;
+    border-radius: 30%;
+    background-color: rgba(107, 146, 185, 0.423);
+}
+
+.stat-item span {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  width: 130px;
+  height: 24px;
+}
+
+.stat-item h3 {
+  font-size: 20px;
+  margin: 10px 0 0;
+  color: #333;
+  width: 35px;
+  height: 38px;
+}
+
+.appointment-amounts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.amount-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.amount-item span {
+  display: block;
+  font-size: 16px;
+  color: #888;
+  width: 179px;
+  height: 48px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.amount-item h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.549);
+}
+
+.amount-item.pending {
+  background-color: #e1d7ff;
+}
+
+.amount-item.confirm {
+  background-color: #ffe1a1;
+}
+
+.amount-item.checked-in {
+  background-color: #d6ffe1;
+}
+
+.amount-item.checked-out {
+  background-color: #e1e1ff;
+}
+
+.sales-chart-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sales-chart {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sales-chart h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chart {
+  height: 200px;
+  background-color: #eef3ff;
+  border-radius: 10px;
+}
+
+.services {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.services h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.services ul li span {
+  font-size: 14px;
+  color: #555;
+}

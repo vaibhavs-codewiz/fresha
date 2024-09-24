@@ -8,6 +8,7 @@ import Appointment from "./component/Appointment.jsx"
 import User_profile from "./component/User_profile.jsx"
 import Select_professional from './component/Select_professional.jsx'  
 import Reschedule_appointments from './component/Reschedule_appointments.jsx'
+import SalesDashboard from './component/SalesDashboard.jsx'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Appointment" element={<Appointment />}></Route>
           <Route path="/Select_professional" element={<Select_professional />}></Route>
           <Route path='/Reschedule_appointments' element={<Reschedule_appointments />}></Route>
+          <Route path='/SalesDashboard' element={<SalesDashboard />}></Route>
         </Routes>
       </BrowserRouter>
     </>
