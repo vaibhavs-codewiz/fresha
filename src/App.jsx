@@ -6,7 +6,7 @@ import First_visit_check from "./component/First_visit_check.jsx"
 import Review_confirm from './component/Review_confirm.jsx'
 import Appointment from "./component/Appointment.jsx"
 import User_profile from "./component/User_profile.jsx"
-import Select_professional from './component/select_professional.jsx'  
+import Select_professional from './component/Select_professional.jsx'  
 import Reschedule_appointments from './component/Reschedule_appointments.jsx'
 
 
