@@ -88,7 +88,7 @@ function Booking() {
             serviceName: "Haircut",
             duration: "45 mins . male only",
             price: "$250.00",
-            image: "data:image/jpeg;base64,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" // Replace with an actual image URL
+            image: "" // Replace with an actual image URL
         },
         {
             serviceName: "Manicure",
@@ -141,28 +141,11 @@ function Booking() {
         event.preventDefault();
         //console.log(event.target.firstChild[0].key);
         console.log(event.attr);
-        let toppart2 = document.querySelector(".top-part2");
-        toppart2.style.display = "none";
+       
         setSelected((prev) => [...prev, event.target.children[0].textContent]);
     }
 
     useEffect(() => {
-        // let popUp = document.querySelector(".pop-up");
-        // let mainDetail = document.querySelector(".mainDetail");
-        // let parent = document.querySelector(".parent");
-        // let container = document.querySelector(".container");
-
-        // popUp.style.display = "flex";
-        // popUp.style.zIndex = "100";
-
-        // mainDetail.style.backgroundColor = "rgb(231,231,231)";
-        // parent.style.zIndex = "-1";
-        // container.style.backgroundColor = "rgb(231,231,231)";
-
-        // return () => {
-        //     // Optional cleanup
-        //     popUp.style.display = "none";
-        // };
     }, []); // Empty dependency array means this runs once when component mounts
     return (
         <>
@@ -181,7 +164,7 @@ function Booking() {
                                     <div className="booking-card" id="booking-card"
                                         key={index}>
 
-                                        <div className="booking-map w-full justify-center">
+                                        <div className="booking-map w-full flex justify-center ">
 
                                             <form name="select" method="post" onSubmit={addtoServices} className="form-select">
                                                 <div className="booking-map-info" key={index}>
@@ -191,7 +174,7 @@ function Booking() {
                                                     </div>
                                                     <p className="booking-price">{service.price}</p>
                                                 </div>
-                                                <input type="submit" name="check" value="" className=""/>
+                                                <input type="submit" value="Select Service" className="submitButton"/>
                                                 {/* <input type="submit" name="check" value="-" /> */}
                                             </form>
 
