@@ -8,7 +8,7 @@ import Appointment from "./component/Appointment.jsx"
 import User_profile from "./component/User_profile.jsx"
 import Select_professional from './component/Select_professional.jsx'  
 import Reschedule_appointments from './component/Reschedule_appointments.jsx'
-
+import React from 'react'
 
 function App() {
 
