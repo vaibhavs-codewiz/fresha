@@ -6,6 +6,9 @@ const appointments = [
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" }
 ];
 
