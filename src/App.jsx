@@ -34,7 +34,7 @@ function App() {
           <Route path='/Reschedule_appointments' element={<Reschedule_appointments />}></Route>
           <Route path='/SalesDashboard' element={<SalesDashboard />}></Route>
           <Route path='/WorkerDashboard' element={<WorkerDashboard />}></Route>
-          <Route path='/StockItems/:paramid' element={<StockItems />}></Route>
+          <Route path='/StockItems' element={<StockItems />}></Route>
         </Routes>
       </BrowserRouter>
     </>
