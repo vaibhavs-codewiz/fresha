@@ -10,6 +10,7 @@ import Select_professional from './component/Select_professional.jsx'
 import Reschedule_appointments from './component/Reschedule_appointments.jsx'
 import SalesDashboard from './component/SalesDashboard.jsx'
 import WorkerDashboard from './component/WorkerDashboard.jsx'
+import StockItems from './component/StockItems.jsx'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/Reschedule_appointments' element={<Reschedule_appointments />}></Route>
           <Route path='/SalesDashboard' element={<SalesDashboard />}></Route>
           <Route path='/WorkerDashboard' element={<WorkerDashboard />}></Route>
+          <Route path='/StockItems/:paramid' element={<StockItems />}></Route>
         </Routes>
       </BrowserRouter>
     </>
