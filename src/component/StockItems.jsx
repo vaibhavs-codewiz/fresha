@@ -98,42 +98,7 @@ const StockManagement = () => {
                         ))}
                     </div>
                 </div>
-                {/* <div className="appointments-section">
-                    <h2>Your Appointment</h2>
-                
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {stockItems.map((item, index) => (
-                                <tr className="Stock-card" key={index}>
-                                    <td><img src={item.image} alt={item.name} className="product-image" /></td>
-                                    <td>{item.name}</td>
-                                    <td>${item.price.toFixed(2)}</td>
-                                    <td className="quantity">
-                                        <button className="quantity-btn">-</button>
-                                        <span>{item.quantity}</span>
-                                        <button className="quantity-btn">+</button>
-                                    </td>
-                                    <td className="actions">
-                                    </td>
-                                    <td>
-                                        <button className="edit-btn"><span><CiEdit></CiEdit></span></button>
-                                        <span>{item.quantity}</span>
-                                        <button className="delete-btn"><span><MdOutlineDeleteForever /></span></button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div> */}
+               
             </div>
         </div>
     );
