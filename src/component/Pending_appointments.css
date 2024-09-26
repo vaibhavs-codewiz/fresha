@@ -1,26 +1,41 @@
-.stock-management-container {
+.pending-appoint-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
-
-.sidebar {
+.pending-sidebar {
   width: 280px;
   height: 100vh;
   background-color: #f3f5fa;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  justify-content: flex-start;
+  position: relative;
+  gap: 30px;
   padding: 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.pending-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(170, 167, 167, 0.516);
 }
 .sidebar2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 80%;
-  position: relative;
+  position: absolute;
+  top: 35%;
 }
 
 .logo {
@@ -41,12 +56,19 @@
   left: 6.7%;
 }
 .circle {
-  width: 60px;
-  height: 80px;
+  width: 30px;
+  height: 50px;
   background-color: #8d5fe87e;
   border-radius: 50%;
 }
-
+.navigation{
+    padding-bottom: 20px;
+  border-bottom: 1px solid rgba(170, 167, 167, 0.516);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navigation ul {
   list-style: none;
   padding: 0;
@@ -64,10 +86,12 @@
   border-radius: 5px;
 }
 
-.bottom {
+.pending-bottom {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: absolute;
+  top: 70%;
 }
 
 .bottom button {
@@ -76,71 +100,12 @@
   border: 1px solid #ddd;
   cursor: pointer;
 }
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.small-font{
+    font-size: 14px;
 }
 
-.content h1 {
-  font-size: 24px;
-  color: #333;
-}
-
-.product-image {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.quantity {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.quantity-btn {
-  background-color: #f3f5fa;
-  color: black;
-  border: none;
-  padding: 2px 7px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.quantity-btn:hover {
-  background-color: #0056b3;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-}
-
-.edit-btn,
-.delete-btn {
-  background-color: #f8f9fa;
-  border: none;
-  padding: 1px;
-  font-size: 18px;
-  cursor: pointer;
-}
-.btn-quantity{
-}
-
-.edit-btn:hover {
-  background-color: #ffc107;
-  color: white;
-}
-
-.delete-btn:hover {
-  background-color: #dc3545;
-  color: white;
-}
-
-.stock-item-main {
+/* ==========  main part ============= */
+.pending-appoint-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -149,7 +114,7 @@
   width: 90vw;
 }
 
-.stock-header {
+.pending-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,7 +122,7 @@
   margin-bottom: 20px;
   background-color: #fff;
   width: 100%;
-  height: 130px;
+  height: 110px;
 }
 .search-bar {
   width: 40%;
@@ -214,53 +179,10 @@
   height: 40px;
   width: 40px;
 }
-.appointments-section {
-  width: 75vw;
-  height: 100%;
-  padding: 20px;
-  border-radius: 20px;
-}
 
-.appointments-section h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  font-weight: 700;
-}
+/* ==========  data section =========== */
 
-
-.status-btn {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.status-btn:hover {
-  background-color: #0056b3;
-}
-/*       ============  table ========= */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table thead {
-
-  color: black;
-}
-tbody{
-  width: 100%;
-}
-.Stock-card{
-  width: 70vw;
-}
-
-/* ========= derived from details css ============= */
-
-.stock-item1 {
+.pending-item1 {
   width: 90%;
   background-color: white;
   display: flex;
@@ -274,17 +196,18 @@ tbody{
     padding-left: 1.5vw;
   }
 }
-.stock-item-header {
+.pending-item-header {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 95%;
   border-radius: 20px;
   padding: 1vw;
+  margin-bottom: 20px;
+  background-color: #F5F6FA;
   p {
     font-weight: bold;
   }
  
-  margin-bottom: 20px;
 }
 .stock-item-parent {
   width: 94%;
@@ -294,26 +217,63 @@ tbody{
   flex-direction: column;
   gap: 10px;
 }
-.stock-item-parent::-webkit-scrollbar-track {
-  background: #bbbaba; 
+.pending-services {
+  width: 18%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
 }
- 
-.stock-item-parent::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-/* Handle on hover */
-.stock-item-parent::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-.btn-div{
+.pending-map{
   display: flex;
-  align-items: flex-start;
-}
-.stock-item-map{
-  display: flex;
+  padding: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(163, 161, 161, 0.126);
   justify-content: space-around;
    .stock-price{
     text-align: left;
   }
+}
+.pending-mapChilds {
+  width: 18%;
+  text-align: center;
+  font-size: 12px;
+}
+.cancel-pending-btn{
+    border-radius: 20px;
+    width: 110px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+.assign-pending-btn{
+    margin-right: 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 200, 0, 0.682);
+    width: 110px;
+    padding: 10px;
+   
+}
+
+
+.assign-pending-btn select {
+    width: 100%; /* Ensures the select takes the full width of its container */
+    padding: 5px; /* Adds a bit of padding for better appearance */
+    font-size: 12px; /* Adjusts the font size to match the design */
+    cursor: pointer;
+    background-color: rgba(255, 200, 0, 0);
+
+}
+
+.pending-mapChilds {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pending-mapChilds select:focus {
+    outline: none; /* Removes the default outline on focus */
+    background-color: rgba(255, 200, 0, 0);
+    width: 100%;
 }
