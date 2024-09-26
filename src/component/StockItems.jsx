@@ -10,6 +10,12 @@ const stockItems = [
     {id:"4", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
     {id:"5", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
  
+    {id:"1",  image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
+    {id:"2", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    {id:"3", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+    {id:"4", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    {id:"5", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 }
+ 
     
 ];
 

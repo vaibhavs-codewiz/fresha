@@ -121,7 +121,7 @@ function Booking() {
             image: "https://images.fresha.com/locations/location-profile-images/72961/2039300/c3133a8a-63a4-432c-bdec-2538097924eb-EssentialBeautySalon-AE-Dubai-Dubai-JumeirahJumeirah3-Fresha.jpg?class=thumb" // Replace with an actual image URL
         }
     ];
-    let plus_icon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
+    // let plus_icon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
 
     const navigate = useNavigate();
     function navigateTo() {
@@ -132,10 +132,10 @@ function Booking() {
     }
 
 
-    function handleClick() {
-        let booking_card = document.querySelectorAll("#booking-card");
-        booking_card.style.display = "flex";
-    }
+    // function handleClick() {
+    //     let booking_card = document.querySelectorAll("#booking-card");
+    //     booking_card.style.display = "flex";
+    // }
 
     function addtoServices(event) {
         event.preventDefault();
