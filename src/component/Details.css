@@ -75,6 +75,7 @@ body {
   justify-content: space-around;
   align-items: center;
   display: flex;
+  text-wrap: wrap;
 }
 .mapChilds {
   width: 18%;
