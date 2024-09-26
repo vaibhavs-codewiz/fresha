@@ -1,26 +1,32 @@
-import './StockItems.css'; 
+import './StockItems.css';
+import "./Details.css"
 import { useParams } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 
 const stockItems = [
-    {id:"1",  image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
-    {id:"2", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
-    {id:"3", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
-    {id:"4", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
-    {id:"5", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
- 
-    {id:"1",  image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
-    {id:"2", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
-    {id:"3", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
-    {id:"4", image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
-    {id:"5", image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 }
- 
-    
+    { image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+
+    { image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+    { image: 'image1.jpg', name: 'Hair Wash Shampoo', price: 690, quantity: 63 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 },
+    { image: 'image2.jpg', name: 'Nail Polish', price: 190, quantity: 13 },
+    { image: 'image3.jpg', name: 'Spa Cream', price: 640, quantity: 635 }
+
+
 ];
 
 const StockManagement = () => {
-    let {paramid} = useParams();
+    let { paramid } = useParams();
     console.log(paramid);
     return (
         <div className="stock-management-container">
@@ -46,8 +52,8 @@ const StockManagement = () => {
                     </div>
                 </div>
             </aside>
-            <div className="main">
-                <div className="header">
+            <div className="stock-item-main">
+                <div className="stock-header">
                     <div className="search-bar">
                         <input type="text" placeholder="Search" />
                     </div>
@@ -65,8 +71,34 @@ const StockManagement = () => {
                         </div>
                     </div>
                 </div>
+                <div className="stock-item1">
+                    <h2 className="">Services</h2>
+                    <div className="stock-item-header">
+                        <div className="services">Image</div>
+                        <div className="services">ServiceName </div>
+                        <div className="services">Price</div>
+                        <div className="services">quantity</div>
+                    </div>
+                    <div className="stock-item-parent">
+                        {stockItems.map((service, index) => (
+                            <div className="detailsCard" key={index}>
+                                <div className="stock-item-map">
+                                    <div className="mapChilds mapImgDiv">
+                                        <img src="" alt="img" />
+                                    </div>
+                                    <div className="mapChilds"> {service.name} </div>
+                                    <div className="mapChilds stock-price">{service.price} </div>
+                                    <div className="btn-div">
+                                    <button className="edit-btn"><CiEdit></CiEdit></button>
+                                    <button className="delete-btn"><MdOutlineDeleteForever /></button>
+                                </div>
 
-                <div className="appointments-section">
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                {/* <div className="appointments-section">
                     <h2>Your Appointment</h2>
                 
                     <table>
@@ -80,7 +112,7 @@ const StockManagement = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {stockItems.filter((item)=> item.id === paramid).map((item, index) => (
+                            {stockItems.map((item, index) => (
                                 <tr className="Stock-card" key={index}>
                                     <td><img src={item.image} alt={item.name} className="product-image" /></td>
                                     <td>{item.name}</td>
@@ -94,46 +126,15 @@ const StockManagement = () => {
                                     </td>
                                     <td>
                                         <button className="edit-btn"><span><CiEdit></CiEdit></span></button>
+                                        <span>{item.quantity}</span>
                                         <button className="delete-btn"><span><MdOutlineDeleteForever /></span></button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
-            {/* <div className="content">
-                <h1>Stock Management</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {stockItems.map((item, index) => (
-                            <tr key={index}>
-                                <td><img src={item.image} alt={item.name} className="product-image" /></td>
-                                <td>{item.name}</td>
-                                <td>${item.price.toFixed(2)}</td>
-                                <td className="quantity">
-                                    <button className="quantity-btn">-</button>
-                                    <span>{item.quantity}</span>
-                                    <button className="quantity-btn">+</button>
-                                </td>
-                                <td className="actions">
-                                    <button className="edit-btn">✏️</button>
-                                    <button className="delete-btn">🗑️</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div> */}
         </div>
     );
 };
