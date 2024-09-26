@@ -123,9 +123,11 @@
 .delete-btn {
   background-color: #f8f9fa;
   border: none;
-  padding: 5px;
+  padding: 1px;
   font-size: 18px;
   cursor: pointer;
+}
+.btn-quantity{
 }
 
 .edit-btn:hover {
@@ -138,22 +140,24 @@
   color: white;
 }
 
-.main {
+.stock-item-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   height: 100%;
   width: 90vw;
-  background-color: #f5f6fa;
 }
 
-.header {
+.stock-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
   margin-bottom: 20px;
-  width: 102%;
-  height: 90px;
+  background-color: #fff;
+  width: 100%;
+  height: 130px;
 }
 .search-bar {
   width: 40%;
@@ -252,4 +256,64 @@ tbody{
 }
 .Stock-card{
   width: 70vw;
+}
+
+/* ========= derived from details css ============= */
+
+.stock-item1 {
+  width: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    padding: 0.5vw;
+    font-weight: bolder;
+    font-size: x-large;
+    align-self: flex-start;
+    padding-left: 1.5vw;
+  }
+}
+.stock-item-header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 20px;
+  padding: 1vw;
+  p {
+    font-weight: bold;
+  }
+ 
+  margin-bottom: 20px;
+}
+.stock-item-parent {
+  width: 94%;
+  height: 80vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stock-item-parent::-webkit-scrollbar-track {
+  background: #bbbaba; 
+}
+ 
+.stock-item-parent::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.stock-item-parent::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.btn-div{
+  display: flex;
+  align-items: flex-start;
+}
+.stock-item-map{
+  display: flex;
+  justify-content: space-around;
+   .stock-price{
+    text-align: left;
+  }
 }
