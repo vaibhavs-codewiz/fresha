@@ -17,6 +17,7 @@ body {
   align-items: flex-end;
   overflow: hidden;
   position: relative;
+  background-color: pink;
 }
 .container {
   height: 95%;
@@ -60,8 +61,6 @@ body {
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  
-
   gap: 10px;
 }
 .detailsCard {

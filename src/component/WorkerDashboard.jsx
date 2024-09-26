@@ -1,7 +1,13 @@
 import "./WorkerDashboard.css"
+import "./Details.css"
 const appointments = [
     { serviceName: "Hair Cut, Spa, Nails", clientName: "Amanda", contact: "9026671648", dateTime: "12.09.2024 - 12.53 PM", duration: "1h 15min" },
     { serviceName: "Spa, Makeup", clientName: "Arjun", contact: "9026671648", dateTime: "03.05.2024 - 10.53 PM", duration: "45min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
+    { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
     { serviceName: "Nails", clientName: "Kresha", contact: "9026671648", dateTime: "25.05.2025 - 02.53 PM", duration: "15min" },
@@ -14,7 +20,7 @@ const appointments = [
 
 function WorkerDashboard() {
     return (
-        <div className="container">
+        <div className="worker-container">
             <aside className="sidebar">
                 <div >
                     <div className="logo">
@@ -39,7 +45,7 @@ function WorkerDashboard() {
             </aside>
 
             <div className="main">
-                <div className="header">
+                <div className="worker-header">
                     <div className="search-bar">
                         <input type="text" placeholder="Search" />
                     </div>
@@ -58,20 +64,34 @@ function WorkerDashboard() {
                     </div>
                 </div>
 
-                <div className="appointments-section">
+                <div className="worker-mainDetail">
+                    <div className="worker-inner-container">
+                        <div className="worker-item1">
                     <h2>Your Appointment</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service Name</th>
-                                <th>Client Name</th>
-                                <th>Contact</th>
-                                <th>Date - Time</th>
-                                <th>Duration</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div className="inner-header">
+                        <div className="services">Image</div>
+                        <div className="services">Service </div>
+                        <div className="services">Price</div>
+                        <div className="services">Duration</div>
+                        <div className="services">Action </div>
+                    </div>
+                        <div className="parent">
+                            {appointments.map((service, index) => (
+                                <div className="detailsCard" key={index}>
+                                    <div className="map">
+                                        <div className="mapChilds"> {service.serviceName} </div>
+                                        <div className="mapChilds">{service.clientName} </div>
+                                        <div className="mapChilds"> {service.contact} </div>
+                                        <div className="mapChilds">{service.dateTime}</div>
+                                        <div className="mapChilds">
+                                            {" "}
+                                            <button > Book </button>{" "}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {/* <tbody>
                             {appointments.map((appointment, index) => (
                                 <>
                                     <tr key={index}>
@@ -85,8 +105,10 @@ function WorkerDashboard() {
 
                                 </>
                             ))}
-                        </tbody>
-                    </table>
+                        </tbody> */}
+                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
