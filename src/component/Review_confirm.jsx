@@ -1,7 +1,7 @@
-import "./Details.css"
-import "./Time.css"
-import "./Booking.css"
-import "./First_visit_check.css"
+import "../styles/Details.css"
+import "../styles/Time.css"
+import "../styles/Booking.css"
+import "../styles/First_visit_check.css"
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

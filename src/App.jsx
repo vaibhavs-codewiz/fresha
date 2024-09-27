@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Details from './component/Details.jsx'
 import Booking from './component/Booking.jsx'
 import Time from './component/Time.jsx'
@@ -13,6 +14,8 @@ import SalesDashboard from './component/SalesDashboard.jsx'
 import WorkerDashboard from './component/WorkerDashboard.jsx'
 import StockItems from './component/StockItems.jsx'
 import Confirm_Appointments from './component/Confirm_Appointments.jsx'
+import CheckinAppointments from './component/CheckinAppointments.jsx'
+
 
 
 
@@ -37,6 +40,7 @@ function App() {
           <Route path='/StockItems' element={<StockItems />}></Route>
           <Route path='/Pending_appointments' element={<Pending_appointments />}></Route>
           <Route path='/Confirm_Appointments' element={<Confirm_Appointments />}></Route>
+          <Route path='/CheckinAppointments' element={<CheckinAppointments />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import "./Details.css"
-import "./Time.css"
-import "./Booking.css"
+import "../styles/Details.css"
+import "../styles/Time.css"
+import "../styles/Booking.css"
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

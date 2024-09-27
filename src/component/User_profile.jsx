@@ -1,5 +1,5 @@
-import "./Appointment.css";
-import "./User_profile.css"
+import "../styles/Appointment.css";
+import "../styles/User_profile.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 

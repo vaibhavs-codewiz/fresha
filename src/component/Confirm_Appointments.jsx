@@ -1,26 +1,27 @@
-import "./Confirm_Appointments.css"
+import "../styles/Confirm_Appointments.css";
 import { useState } from "react";
 import { RiHome2Line } from "react-icons/ri";
 import { IoCalendarOutline } from "react-icons/io5";
 import { LiaUserClockSolid } from "react-icons/lia";
 
 function Confirm_Appointments() {
-
     const [clientName, setClientName] = useState("");
     const [appointmentId, setAppointmentId] = useState("");
     const [isPopupVisible, setIsPopupVisible] = useState(false);
 
     const handleConfirm = () => {
         console.log("Confirming:", clientName, appointmentId);
-    }
-    const handlePopup = () => {
+    };
+
+    const handlePopup = (clientName) => {
+        setClientName(clientName);  // Set the clicked client's name
         setIsPopupVisible(true);
-        console.log("heyy")
     };
 
     const handleCancel = () => {
         setIsPopupVisible(false);
     };
+
     const pendingServices = [
         {
             serviceName: "Haircut",
@@ -71,47 +72,7 @@ function Confirm_Appointments() {
             duration: "1 hour",
             assignEmp: "Noah Green",
             cancel: false,
-        },
-        {
-            serviceName: "Massage Therapy",
-            clientName: "Emma Williams",
-            contact: "+1-303-555-0123",
-            dateTime: "2024-09-28 16:00",
-            preferredWorker: "James Anderson",
-            duration: "1 hour",
-            assignEmp: "Sarah Brown",
-            cancel: false,
-        },
-        {
-            serviceName: "Manicure",
-            clientName: "Sophia Martinez",
-            contact: "+1-408-555-0198",
-            dateTime: "2024-09-29 11:00",
-            preferredWorker: "Olivia Garcia",
-            duration: "30 mins",
-            assignEmp: "Ethan Taylor",
-            cancel: true,
-        },
-        {
-            serviceName: "Facial Treatment",
-            clientName: "Michael Johnson",
-            contact: "+1-212-555-0143",
-            dateTime: "2024-09-30 13:45",
-            preferredWorker: "Liam Davis",
-            duration: "1 hour 30 mins",
-            assignEmp: "Mia White",
-            cancel: false,
-        },
-        {
-            serviceName: "Pedicure",
-            clientName: "Isabella Wilson",
-            contact: "+1-415-555-0175",
-            dateTime: "2024-09-30 15:30",
-            preferredWorker: "Charlotte Moore",
-            duration: "1 hour",
-            assignEmp: "Noah Green",
-            cancel: false,
-        },
+        }
     ];
 
     return (
@@ -133,8 +94,6 @@ function Confirm_Appointments() {
                         <LiaUserClockSolid />
                         <p className="small-font">Appointment</p>
                     </div>
-
-
                 </div>
                 <div className="sidebar2">
                     <nav className="navigation">
@@ -173,13 +132,13 @@ function Confirm_Appointments() {
                 <div className="pending-item1">
                     <h2 className="">Confirm Appointments</h2>
                     <div className="pending-item-header">
-                        <div className="pending-services">ServiceName </div>
-                        <div className="pending-services">client name</div>
-                        <div className="pending-services">contact</div>
+                        <div className="pending-services">ServiceName</div>
+                        <div className="pending-services">Client Name</div>
+                        <div className="pending-services">Contact</div>
                         <div className="pending-services">Date-Time</div>
-                        <div className="pending-services">worker-assigned</div>
+                        <div className="pending-services">Worker Assigned</div>
                         <div className="pending-services">Duration</div>
-                        <div className="pending-services">check in</div>
+                        <div className="pending-services">Check In</div>
                     </div>
 
                     <div className="stock-item-parent">
@@ -192,7 +151,7 @@ function Confirm_Appointments() {
                                     <div className="pending-mapChilds"> {service.dateTime} </div>
                                     <div className="pending-mapChilds"> {service.preferredWorker} </div>
                                     <div className="pending-mapChilds"> {service.duration} </div>
-                                    <div className="checkin-btn" onClick={handlePopup}>check in</div>
+                                    <div className="checkin-btn" onClick={() => handlePopup(service.clientName)}>check in</div>
                                 </div>
                             </div>
                         ))}
@@ -216,12 +175,10 @@ function Confirm_Appointments() {
                             <label>Client Name</label>
                             <input
                                 type="text"
-                                placeholder="Client Name"
-                                value={clientName}
+                                value={clientName}  // Input field now contains the client's name
                                 onChange={(e) => setClientName(e.target.value)}
                             />
-
-                            <label>User Check In Appointment I.D</label>
+                            <label>Appointment I.D</label>
                             <input
                                 type="text"
                                 placeholder="Appointment ID"
@@ -238,7 +195,7 @@ function Confirm_Appointments() {
                 </div>
             ) : null}
         </div>
-    )
+    );
 }
 
-export default Confirm_Appointments
+export default Confirm_Appointments;

@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-.sidebar {
+.stock-sidebar {
   width: 280px;
   height: 100vh;
   background-color: #f3f5fa;
@@ -15,7 +15,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.sidebar2 {
+.stock-sidebar2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

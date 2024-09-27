@@ -1,6 +1,6 @@
-import "./Select_professional.css"
-import "./Details.css"
-import "./Booking.css"
+import "../styles/Select_professional.css"
+import "../styles/Details.css"
+import "../styles/Booking.css"
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

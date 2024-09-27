@@ -1,5 +1,5 @@
 import React from 'react';
-import './Reschedule_appointments.css';
+import '../styles/Reschedule_appointments.css';
 
 const Reschedule_appointments = () => {
     const appointmentsData = [
