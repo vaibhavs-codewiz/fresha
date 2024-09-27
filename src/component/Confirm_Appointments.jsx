@@ -32,21 +32,21 @@ function Confirm_Appointments() {
     fetchData();
   }, []);
 
-  const handleConfirm =async () => {
+  const handleConfirm = async () => {
     try {
-        const selectedBookedAppointment = selectedAppointment._id
-        const response = await axios.put(
-          `http://localhost:3000/appointment/checkInAppointment/${selectedBookedAppointment}`,
-          {},
-          {
-            withCredentials: true, // Include credentials if necessary
-          }
-        );
-        console.log("Appointment status updated:", response.data);
-        // Optionally, update your UI to reflect the status change
-      } catch (error) {
-        console.error("Error updating appointment status:", error);
-      }
+      const selectedBookedAppointment = selectedAppointment._id;
+      const response = await axios.put(
+        `http://localhost:3000/appointment/checkInAppointment/${selectedBookedAppointment}`,
+        {},
+        {
+          withCredentials: true, // Include credentials if necessary
+        }
+      );
+      console.log("Appointment status updated:", response.data);
+      // Optionally, update your UI to reflect the status change
+    } catch (error) {
+      console.error("Error updating appointment status:", error);
+    }
   };
   const handlePopup = (appointment) => {
     setIsPopupVisible(true);
