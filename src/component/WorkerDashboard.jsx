@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./WorkerDashboard.css";
-import "./Details.css";
+import "../styles/WorkerDashboard.css"
+import "../styles/Details.css";
 
 function WorkerDashboard() {
   const [appointments, setAppointments] = useState([]);
