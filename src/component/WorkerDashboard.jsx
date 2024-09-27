@@ -17,6 +17,7 @@ function WorkerDashboard() {
         );
 
         setAppointments(response.data);
+      
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -82,8 +83,8 @@ function WorkerDashboard() {
             <div className="worker-item1">
               <h2>Your Appointment</h2>
               <div className="inner-header">
-                <div className="services">Image</div>
-                <div className="services">Service </div>
+                <div className="services">Service</div>
+                <div className="services"> Client Name</div>
                 <div className="services">Price</div>
                 <div className="services">Duration</div>
                 <div className="services">Action </div>
