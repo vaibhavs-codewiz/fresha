@@ -1,4 +1,4 @@
-import './SalesDashboard.css';
+import '../styles/SalesDashboard.css';
 import { Line } from 'react-chartjs-2';//Type of chart
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';//importing coponents and elements.
 

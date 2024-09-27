@@ -1,5 +1,5 @@
-import './StockItems.css';
-import "./Details.css"
+import '../styles/StockItems.css';
+
 import { useParams } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
@@ -30,16 +30,11 @@ const StockManagement = () => {
     console.log(paramid);
     return (
         <div className="stock-management-container">
-            <aside className="sidebar">
+            <aside className="stock-sidebar">
                 <div >
-                    <div className="logo">
-                        <div className="circle"></div>
-                    </div>
-                    <div className="logo2">
-                        <div className="circle"></div>
-                    </div>
+                   LOGO
                 </div>
-                <div className="sidebar2">
+                <div className="stock-sidebar2">
                     <nav className="navigation">
                         <ul>
                             <li className="active">Appointments</li>

@@ -1,14 +1,13 @@
-import "./Appointment.css";
+import "../styles/Appointment.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Appointment() {
    let navigate = useNavigate();
 
    function navigateProfile(){
-     navigate("\User_profile")
+     navigate("/User_profile")
    }
 
     function dropDown(){

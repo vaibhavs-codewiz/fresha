@@ -1,4 +1,4 @@
-import "./Pending_appointments.css"
+import "../styles/Pending_appointments.css"
 function Pending_appointments() {
     const pendingServices = [
         {

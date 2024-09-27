@@ -1,5 +1,5 @@
-import "./WorkerDashboard.css"
-import "./Details.css"
+import "../styles/WorkerDashboard.css"
+import "../styles/Details.css"
 const appointments = [
     { serviceName: "Hair Cut, Spa, Nails", clientName: "Amanda", contact: "9026671648", dateTime: "12.09.2024 - 12.53 PM", duration: "1h 15min" },
     { serviceName: "Spa, Makeup", clientName: "Arjun", contact: "9026671648", dateTime: "03.05.2024 - 10.53 PM", duration: "45min" },
