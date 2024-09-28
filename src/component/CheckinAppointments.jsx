@@ -1,4 +1,5 @@
 import "../styles/CheckinAppointments.css"
+import SidebarComponent from "../Sidebars/SidebarComponent";
 
 import { useState } from "react";
 import { RiHome2Line } from "react-icons/ri";
@@ -16,7 +17,7 @@ function checkinAppointments() {
     }
     const handlePopup = () => {
         setIsPopupVisible(true);
-        console.log("heyy")
+    
     };
 
     const handleCancel = () => {
@@ -117,41 +118,8 @@ function checkinAppointments() {
 
     return (
         <div className="checkin-appoint-container">
-            <div className="checkin-sidebar">
-                <div className="checkin-sidebar-top">
-                    <div className="">
-                        LOGO
-                    </div>
-                    <div className="dashboard-icon">
-                        <RiHome2Line width={"45px"} />
-                        <p className="small-font">Dashboard</p>
-                    </div>
-                    <div className="dashboard-icon">
-                        <IoCalendarOutline />
-                        <p className="small-font">Calendar</p>
-                    </div>
-                    <div className="dashboard-icon">
-                        <LiaUserClockSolid />
-                        <p className="small-font">Appointment</p>
-                    </div>
+            <SidebarComponent active={{ currentActive: "CheckedAppointments" }} />
 
-
-                </div>
-                <div className="checkin-sidebar2">
-                    <nav className="checkin-navigation">
-                        <ul>
-                            <li className="active small-font">Appointments</li>
-                            <li className="small-font">confirm appointment</li>
-                            <li className="small-font">checked appointment</li>
-                            <li className="small-font">paid appointment</li>
-                        </ul>
-                    </nav>
-                    <div className="checkin-bottom">
-                        <button className="small-font">Settings</button>
-                        <button className="small-font">Logout</button>
-                    </div>
-                </div>
-            </div>
             <div className="checkin-appoint-main">
                 <div className="checkin-header">
                     <div className="search-bar">

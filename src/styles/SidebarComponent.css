@@ -1,0 +1,99 @@
+.dashboard-icon {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.dashboard-icon button{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background: none;
+    border: none;
+}
+.Paid-sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: #f3f5fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  gap: 30px;
+  padding: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.Paid-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  width: 80%;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 1px solid rgba(170, 167, 167, 0.516);
+  text-align: left;
+  gap: 20px;
+}
+.Paid-sidebar2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  margin-left: -20px;
+}
+
+.Paid-navigation {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(170, 167, 167, 0.516);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Paid-navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Paid-navigation ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.Paid-navigation ul li.active {
+  background-color: #0096ff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.Paid-active{
+    background-color: #0096ff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.Paid-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 70%;
+}
+
+.Paid-bottom button {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.small-font {
+  font-size: 14px;
+}

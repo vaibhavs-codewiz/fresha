@@ -1,8 +1,7 @@
 import "../styles/Confirm_Appointments.css";
+import SidebarComponent from "../Sidebars/SidebarComponent";
 import { useState } from "react";
-import { RiHome2Line } from "react-icons/ri";
-import { IoCalendarOutline } from "react-icons/io5";
-import { LiaUserClockSolid } from "react-icons/lia";
+
 
 function Confirm_Appointments() {
     const [clientName, setClientName] = useState("");
@@ -77,39 +76,8 @@ function Confirm_Appointments() {
 
     return (
         <div className="pending-appoint-container">
-            <div className="pending-sidebar">
-                <div className="pending-sidebar-top">
-                    <div className="logo">
-                        <div className="circle"></div>
-                    </div>
-                    <div className="dashboard-icon">
-                        <RiHome2Line width={"45px"} />
-                        <p className="small-font">Dashboard</p>
-                    </div>
-                    <div className="dashboard-icon">
-                        <IoCalendarOutline />
-                        <p className="small-font">Calendar</p>
-                    </div>
-                    <div className="dashboard-icon">
-                        <LiaUserClockSolid />
-                        <p className="small-font">Appointment</p>
-                    </div>
-                </div>
-                <div className="sidebar2">
-                    <nav className="navigation">
-                        <ul>
-                            <li className="active small-font">Appointments</li>
-                            <li className="small-font">confirm appointment</li>
-                            <li className="small-font">checked appointment</li>
-                            <li className="small-font">paid appointment</li>
-                        </ul>
-                    </nav>
-                    <div className="pending-bottom">
-                        <button className="small-font">Settings</button>
-                        <button className="small-font">Logout</button>
-                    </div>
-                </div>
-            </div>
+            <SidebarComponent active={{ currentActive: "ConfirmedAppointments" }} />
+
             <div className="pending-appoint-main">
                 <div className="pending-header">
                     <div className="search-bar">

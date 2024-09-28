@@ -1,4 +1,6 @@
 import "../styles/Pending_appointments.css"
+import SidebarComponent from "../Sidebars/SidebarComponent";
+
 function Pending_appointments() {
     const pendingServices = [
         {
@@ -95,30 +97,8 @@ function Pending_appointments() {
 
     return (
         <div className="pending-appoint-container">
-            <div className="pending-sidebar">
-                <div className="pending-sidebar-top">
-                    <div className="logo">
-                        <div className="circle"></div>
-                    </div>
-                    <p className="small-font">Dashboard</p>
-                    <p className="small-font">calendar</p>
-                    <p className="small-font">all appointment</p>
-                </div>
-                <div className="sidebar2">
-                    <nav className="navigation">
-                        <ul>
-                            <li className="active small-font">Appointments</li>
-                            <li className="small-font">confirm appointment</li>
-                            <li className="small-font">checked appointment</li>
-                            <li className="small-font">paid appointment</li>
-                        </ul>
-                    </nav>
-                    <div className="pending-bottom">
-                        <button className="small-font">Settings</button>
-                        <button className="small-font">Logout</button>
-                    </div>
-                </div>
-            </div>
+            <SidebarComponent active={{ currentActive: "PendingAppointments" }} />
+
             <div className="pending-appoint-main">
                 <div className="pending-header">
                     <div className="search-bar">

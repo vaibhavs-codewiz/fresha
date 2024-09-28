@@ -1,4 +1,5 @@
 import '../styles/StockItems.css';
+import WorkerSidebar from "../Sidebars/WorkerSidebar";
 
 import { useParams } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
@@ -30,23 +31,8 @@ const StockManagement = () => {
     console.log(paramid);
     return (
         <div className="stock-management-container">
-            <aside className="stock-sidebar">
-                <div >
-                   LOGO
-                </div>
-                <div className="stock-sidebar2">
-                    <nav className="navigation">
-                        <ul>
-                            <li className="active">Appointments</li>
-                            <li>Stock Management</li>
-                        </ul>
-                    </nav>
-                    <div className="bottom">
-                        <button>Settings</button>
-                        <button>Logout</button>
-                    </div>
-                </div>
-            </aside>
+            <WorkerSidebar active={{ CurrentActive: "" }} />
+
             <div className="stock-item-main">
                 <div className="stock-header">
                     <div className="search-bar">
@@ -84,17 +70,53 @@ const StockManagement = () => {
                                     <div className="mapChilds"> {service.name} </div>
                                     <div className="mapChilds stock-price">{service.price} </div>
                                     <div className="btn-div">
-                                    <button className="edit-btn"><CiEdit></CiEdit></button>
-                                    <button className="delete-btn"><MdOutlineDeleteForever /></button>
-                                </div>
+                                        <button className="edit-btn"><CiEdit></CiEdit></button>
+                                        <button className="delete-btn"><MdOutlineDeleteForever /></button>
+                                    </div>
 
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-               
             </div>
+            {/* <div className="worker-mainDetail">
+                <div className="worker-inner-container">
+                    <div className="worker-item1">
+                        <h2>Your Appointment</h2>
+                        <div className="inner-header">
+                            <div className="services" style={{ borderTopLeftRadius: "20px", borderBottomLeftRadius: "20px" }}>
+                                service name
+                            </div>
+
+                            <div className="services">client name</div>
+                            <div className="services">contact</div>
+                            <div className="services">Date-Time</div>
+                            <div className="services">Duration</div>
+                            <div className="services" style={{ borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>status</div>
+                        </div>
+                        <div className="worker-dashboard-parent">
+                            {appointments.map((service, index) => (
+                                <div className="worker-dashboard-detailsCard" key={index}>
+                                    <div className="worker-dashboard-map">
+                                        <div className="worker-dashboard-mapChilds"> {service.serviceName} </div>
+                                        <div className="worker-dashboard-mapChilds">{service.clientName} </div>
+                                        <div className="worker-dashboard-mapChilds"> {service.contact} </div>
+                                        <div className="worker-dashboard-mapChilds">{service.dateTime}</div>
+                                        <div className="worker-dashboard-mapChilds">{service.duration}</div>
+                                        <div className="worker-dashboard-mapChilds">
+                                            {" "}
+                                            <button > status </button>{" "}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> */}
         </div>
     );
 };
