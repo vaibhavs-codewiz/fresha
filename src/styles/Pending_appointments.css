@@ -191,7 +191,6 @@
   h2 {
     padding: 0.5vw;
     font-weight: bolder;
-    font-size: x-large;
     align-self: flex-start;
     padding-left: 1.5vw;
   }
@@ -204,6 +203,8 @@
   padding: 1vw;
   margin-bottom: 20px;
   background-color: #F5F6FA;
+  align-items: center;
+
   p {
     font-weight: bold;
   }
@@ -221,10 +222,11 @@
   width: 18%;
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+
 }
 .pending-map{
   display: flex;
+  align-items: center;
   padding: 20px;
   font-weight: 500;
   border-bottom: 1px solid rgba(163, 161, 161, 0.126);
@@ -236,21 +238,23 @@
 .pending-mapChilds {
   width: 18%;
   text-align: center;
-  font-size: 12px;
 }
 .cancel-pending-btn{
+  color: white;
+  font-weight: 300;
+  height: max-content;
     border-radius: 20px;
     width: 110px;
-    background-color: red;
+    background-color:  #DB4437;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: small;
 }
 .assign-pending-btn{
+  height: max-content;
     margin-right: 50px;
     border-radius: 20px;
-    background-color: rgba(255, 200, 0, 0.682);
+    background-color: 	#F4B400;
     width: 110px;
     padding: 10px;
    
@@ -259,8 +263,7 @@
 
 .assign-pending-btn select {
     width: 100%; /* Ensures the select takes the full width of its container */
-    padding: 5px; /* Adds a bit of padding for better appearance */
-    font-size: 12px; /* Adjusts the font size to match the design */
+    padding: 5px; /* Adds a bit of padding for better appearance *//* Adjusts the font size to match the design */
     cursor: pointer;
     background-color: rgba(255, 200, 0, 0);
 
