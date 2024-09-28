@@ -1,14 +1,24 @@
+import "../styles/CheckinAppointments.css"
+import SidebarComponent from "../Sidebars/SidebarComponent";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { IoCalendarOutline } from "react-icons/io5";
 import { LiaUserClockSolid } from "react-icons/lia";
 import { RiHome2Line } from "react-icons/ri";
 import "../styles/CheckinAppointments.css";
 
 function checkinAppointments() {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [appointments, setAppointments] = useState([]);
 
+    const [appointments, setAppointments] = useState([]);
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+    const handlePopup = () => {
+        setIsPopupVisible(true);
+    
+    };
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,91 +35,47 @@ function checkinAppointments() {
         console.error("Error fetching data:", error);
       }
     };
-
-    fetchData();
+fetchData();
   }, []);
 
-  const handleConfirm = () => {
-    console.log("Confirming:", clientName, appointmentId);
-  };
-  const handlePopup = () => {
-    setIsPopupVisible(true);
-    console.log("heyy");
-  };
+  // some data that vaibhav bought 
+      return (
+       <div className="checkin-appoint-container">
+           <SidebarComponent active={{ currentActive: "CheckedAppointments" }} />
 
-  const handleCancel = () => {
-    setIsPopupVisible(false);
-  };
+            <div className="checkin-appoint-main">
+                <div className="checkin-header">
+                    <div className="search-bar">
+                        <input type="text" placeholder="Search" />
+                    </div>
+                    <div className="profile">
+                        <span className="notification">
+                           <i className="fa fa-bell"></i>
+                            <span className="badge">2</span>
+                        </span>
+                        <div className="user-info">
+                            <img src="https://via.placeholder.com/50" alt="User" />
+                            <div>
+                                <p>Pavitra Gupta<br /></p>
+                                <p className="role">Admin</p>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+                <div className="pending-item1">
+                    <h2 className="">Checked in Appointments</h2>
+                    <div className="checkin-item-header">
+                        <div className="checkin-services">ServiceName </div>
+                        <div className="checkin-services">client name</div>
+                        <div className="checkin-services">contact</div>
+                        <div className="checkin-services">Date-Time</div>
+                        <div className="checkin-services">preffered-assigned</div>
+                        <div className="checkin-services">Duration</div>
+                        <div className="checkin-services">check in</div>
+                        <div className="checkin-services">payment</div>
+                    </div>
 
-  return (
-    <div className="checkin-appoint-container">
-      <div className="checkin-sidebar">
-        <div className="checkin-sidebar-top">
-          <div className="">LOGO</div>
-          <div className="dashboard-icon">
-            <RiHome2Line width={"45px"} />
-            <p className="small-font">Dashboard</p>
-          </div>
-          <div className="dashboard-icon">
-            <IoCalendarOutline />
-            <p className="small-font">Calendar</p>
-          </div>
-          <div className="dashboard-icon">
-            <LiaUserClockSolid />
-            <p className="small-font">Appointment</p>
-          </div>
-        </div>
-        <div className="checkin-sidebar2">
-          <nav className="checkin-navigation">
-            <ul>
-              <li className="active small-font">Appointments</li>
-              <li className="small-font">confirm appointment</li>
-              <li className="small-font">checked appointment</li>
-              <li className="small-font">paid appointment</li>
-            </ul>
-          </nav>
-          <div className="checkin-bottom">
-            <button className="small-font">Settings</button>
-            <button className="small-font">Logout</button>
-          </div>
-        </div>
-      </div>
-      <div className="checkin-appoint-main">
-        <div className="checkin-header">
-          <div className="search-bar">
-            <input type="text" placeholder="Search" />
-          </div>
-          <div className="profile">
-            <span className="notification">
-              <i className="fa fa-bell"></i>
-              <span className="badge">2</span>
-            </span>
-            <div className="user-info">
-              <img src="https://via.placeholder.com/50" alt="User" />
-              <div>
-                <p>
-                  Pavitra Gupta
-                  <br />
-                </p>
-                <p className="role">Admin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pending-item1">
-          <h2 className="">Checked in Appointments</h2>
-          <div className="checkin-item-header">
-            <div className="checkin-services">ServiceName </div>
-            <div className="checkin-services">client name</div>
-            <div className="checkin-services">contact</div>
-            <div className="checkin-services">Date-Time</div>
-            <div className="checkin-services">preffered-assigned</div>
-            <div className="checkin-services">Duration</div>
-            <div className="checkin-services">check in</div>
-            <div className="checkin-services">payment</div>
-          </div>
-
-          <div className="stock-item-parent">
+                   <div className="stock-item-parent">
             {appointments.map((service, index) => (
               <div className="detailsCard" key={index}>
                 <div className="checkin-map">

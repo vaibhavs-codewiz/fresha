@@ -1,6 +1,8 @@
+import "../styles/Pending_appointments.css"
+import SidebarComponent from "../Sidebars/SidebarComponent";
 import { useState, useEffect } from "react";
-import "../styles/Pending_appointments.css";
 import axios from "axios";
+
 
 function Pending_appointments() {
   const [appointments, setAppointments] = useState([]);
@@ -70,58 +72,30 @@ function Pending_appointments() {
     }
   };
 
-  return (
-    <div className="pending-appoint-container">
-      {/* Sidebar */}
-      <div className="pending-sidebar">
-        <div className="pending-sidebar-top">
-          <div className="logo">
-            <div className="circle"></div>
-          </div>
-          <p className="small-font">Dashboard</p>
-          <p className="small-font">Calendar</p>
-          <p className="small-font">All Appointments</p>
-        </div>
-        <div className="sidebar2">
-          <nav className="navigation">
-            <ul>
-              <li className="active small-font">Appointments</li>
-              <li className="small-font">Confirm Appointment</li>
-              <li className="small-font">Checked Appointment</li>
-              <li className="small-font">Paid Appointment</li>
-            </ul>
-          </nav>
-          <div className="pending-bottom">
-            <button className="small-font">Settings</button>
-            <button className="small-font">Logout</button>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="pending-appoint-main">
-        <div className="pending-header">
-          <div className="search-bar">
-            <input type="text" placeholder="Search" />
-          </div>
-          <div className="profile">
-            <span className="notification">
-              <i className="fa fa-bell"></i>
-              <span className="badge">2</span>
-            </span>
-            <div className="user-info">
-              <img src="https://via.placeholder.com/50" alt="User" />
-              <div>
-                <p>
-                  Pavitra Gupta
-                  <br />
-                </p>
-                <p className="role">Admin</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    return (
+        <div className="pending-appoint-container">
+            <SidebarComponent active={{ currentActive: "PendingAppointments" }} />
 
+            <div className="pending-appoint-main">
+                <div className="pending-header">
+                    <div className="search-bar">
+                        <input type="text" placeholder="Search" />
+                    </div>
+                    <div className="profile">
+                        <span className="notification">
+                            <i className="fa fa-bell"></i>
+                            <span className="badge">2</span>
+                        </span>
+                        <div className="user-info">
+                            <img src="https://via.placeholder.com/50" alt="User" />
+                            <div>
+                                <p>Pavitra Gupta<br /></p>
+                                <p className="role">Admin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <div className="pending-item1">
           <h2 className="">Pending Appointments</h2>
           <div className="pending-item-header">

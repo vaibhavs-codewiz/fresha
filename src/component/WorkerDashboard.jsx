@@ -2,7 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/WorkerDashboard.css"
-import "../styles/Details.css";
+import WorkerSidebar from "../Sidebars/WorkerSidebar";
+import "../styles/Details.css"
+import Header from "../Sidebars/Header";
+
+
+
+
 
 function WorkerDashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -32,51 +38,10 @@ function WorkerDashboard() {
   }
   return (
     <div className="worker-container">
-      <aside className="sidebar">
-        <div>
-          <div className="logo">
-            <div className="circle"></div>
-          </div>
-          <div className="logo2">
-            <div className="circle"></div>
-          </div>
-        </div>
-        <div className="sidebar2">
-          <nav className="navigation">
-            <ul>
-              <li className="active">Appointments</li>
-              <li>Stock Management</li>
-            </ul>
-          </nav>
-          <div className="bottom">
-            <button>Settings</button>
-            <button>Logout</button>
-          </div>
-        </div>
-      </aside>
-
+  <WorkerSidebar active = {{CurrentActive: ""}}/>  
       <div className="main">
-        <div className="worker-header">
-          <div className="search-bar">
-            <input type="text" placeholder="Search" />
-          </div>
-          <div className="profile">
-            <span className="notification">
-              <i className="fa fa-bell"></i>
-              <span className="badge">2</span>
-            </span>
-            <div className="user-info">
-              <img src="https://via.placeholder.com/50" alt="User" />
-              <div>
-                <p>
-                  Pavitra Gupta
-                  <br />
-                </p>
-                <p className="role">Admin</p>
-              </div>
-            </div>
-          </div>
-        </div>
+         <Header />
+      
 
         <div className="worker-mainDetail">
           <div className="worker-inner-container">
@@ -110,21 +75,6 @@ function WorkerDashboard() {
                   </div>
                 ))}
               </div>
-              {/* <tbody>
-                            {appointments.map((appointment, index) => (
-                                <>
-                                    <tr key={index}>
-                                        <td>{appointment.serviceName}</td>
-                                        <td>{appointment.clientName}</td>
-                                        <td>{appointment.contact}</td>
-                                        <td>{appointment.dateTime}</td>
-                                        <td>{appointment.duration}</td>
-                                        <td><button className="status-btn">Status</button></td>
-                                    </tr>
-
-                                </>
-                            ))}
-                        </tbody> */}
             </div>
           </div>
         </div>
