@@ -23,7 +23,7 @@ const appointments = [
 function WorkerDashboard() {
     return (
         <div className="worker-container">
-            <WorkerSidebar active = {{CurrentActive: ""}}/>
+            <WorkerSidebar active = {{currentActive: ""}}/>
 
             <div className="main">
                 <Header />

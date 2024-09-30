@@ -125,23 +125,22 @@ function Pending_appointments() {
                         <div className="pending-services">client name</div>
                         <div className="pending-services">contact</div>
                         <div className="pending-services">Date-Time</div>
-                        <div className="pending-services">preferred-worker</div>
                         <div className="pending-services">Duration</div>
                         <div className="pending-services">assign emp</div>
+                        <div className="pending-services">preferred-worker</div>
                         <div className="pending-services">cancel</div>
                     </div>
 
                     <div className="stock-item-parent">
                         {pendingServices.map((service, index) => (
-                            <div className="detailsCard" key={index}>
+                            <div className="pending-detailsCard" key={index}>
                                 <div className="pending-map">
                                     <div className="pending-mapChilds"> {service.serviceName} </div>
                                     <div className="pending-mapChilds"> {service.clientName} </div>
                                     <div className="pending-mapChilds"> {service.contact} </div>
                                     <div className="pending-mapChilds"> {service.dateTime} </div>
-                                    <div className="pending-mapChilds"> {service.preferredWorker} </div>
                                     <div className="pending-mapChilds"> {service.duration} </div>
-                                    <div className="pending-mapChilds assign-pending-btn">
+                                    <div className=" assign-pending-btn">
                                         <div>
                                             <label htmlFor={`worker-${index}`}></label> {/* Use unique ID for each select */}
                                             <select name="assign" id={`worker-${index}`} onClick={(e) => e.stopPropagation()}>
@@ -152,6 +151,7 @@ function Pending_appointments() {
                                             </select>
                                         </div>
                                     </div>
+                                    <div className="confirm-pending-btn">confirm</div>
                                     <div className=" cancel-pending-btn">cancel</div>
                                 </div>
                             </div>

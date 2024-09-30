@@ -13,7 +13,7 @@ function Confirm_Appointments() {
     };
 
     const handlePopup = (clientName) => {
-        setClientName(clientName);  // Set the clicked client's name
+        setClientName(clientName);  
         setIsPopupVisible(true);
     };
 
