@@ -22,6 +22,14 @@ import SidebarComponent from "./Sidebars/SidebarComponent.jsx";
 import Header from "./Sidebars/Header.jsx";
 
 
+
+
+import AppointmentWorkers from "./component/AppointmentWorker.jsx"
+import AdminSetting from './component/AdminSettings.jsx'
+
+
+
+
 function App() {
 
   return (
@@ -49,6 +57,7 @@ function App() {
           <Route path='/NewAppointment' element={<NewAppointment />}></Route>
           <Route path='/AppointmentWorkers' element={<AppointmentWorkers />}></Route>
 
+          <Route path='/AdminSetting' element={<AdminSetting />}></Route>
 
           <Route path="/SidebarComponent" element={<SidebarComponent />}></Route>
           <Route path="/Header" element={<Header />}></Route>
