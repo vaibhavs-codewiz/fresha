@@ -2,11 +2,7 @@ import "../styles/Confirm_Appointments.css";
 import SidebarComponent from "../Sidebars/SidebarComponent";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { RiHome2Line } from "react-icons/ri";
-import { IoCalendarOutline } from "react-icons/io5";
-import { LiaUserClockSolid } from "react-icons/lia";
-
-
+import { VITE_BASEURL } from "../config";
 
 function Confirm_Appointments() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -17,7 +13,7 @@ function Confirm_Appointments() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/appointment/getBookedAppointments",
+          `${VITE_BASEURL}:3000/appointment/getBookedAppointments`,
           {
             withCredentials: true, // For cookies, if needed
           }
@@ -37,7 +33,7 @@ function Confirm_Appointments() {
     try {
       const selectedBookedAppointment = selectedAppointment._id;
       const response = await axios.put(
-        `http://localhost:3000/appointment/checkInAppointment/${selectedBookedAppointment}`,
+        `${VITE_BASEURL}appointment/checkInAppointment/${selectedBookedAppointment}`,
         {},
         {
           withCredentials: true, // Include credentials if necessary

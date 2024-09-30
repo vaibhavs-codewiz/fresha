@@ -5,6 +5,7 @@ import "../styles/WorkerDashboard.css"
 import WorkerSidebar from "../Sidebars/WorkerSidebar";
 import "../styles/Details.css"
 import Header from "../Sidebars/Header";
+import { VITE_BASEURL } from "../config";
 
 
 
@@ -16,7 +17,7 @@ function WorkerDashboard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/appointment/getAllAppointments",
+          `${VITE_BASEURL}/appointment/getAllAppointments`,
           {
             withCredentials: true, // For cookies, if needed
           }

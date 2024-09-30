@@ -1,12 +1,14 @@
 import "../styles/PaidAppointment.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SidebarComponent from "../Sidebars/SidebarComponent";
-
+import axios from "axios";
+import { VITE_BASEURL } from "../config";
 
 function PaidAppointment() {
     // const [clientName, setClientName] = useState("");
     // const [appointmentId, setAppointmentId] = useState("");
     const [isPopupVisible, setIsPopupVisible] = useState(false);
+    const [appointments, setAppointments] = useState([]);
 
     const handlePopup = () => {
         setIsPopupVisible(true);
@@ -15,114 +17,26 @@ function PaidAppointment() {
 
     // Function to handle setting the active appointment
    
-
-    const pendingServices = [
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-
-        {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-
-    ];
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get(
+              `${VITE_BASEURL}/appointment/getAllPaidAppointments`,
+              {
+                withCredentials: true, // For cookies, if needed
+              }
+            );
+    
+            setAppointments(response.data.data);
+            console.log(response.data.data);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+ 
 
     return (
         <div className="Paid-appoint-container">
@@ -161,15 +75,15 @@ function PaidAppointment() {
                     </div>
 
                     <div className="stock-item-parent">
-                        {pendingServices.map((service, index) => (
+                        {appointments.map((service, index) => (
                             <div className="detailsCard" key={index}>
                                 <div className="Paid-map">
-                                    <div className="Paid-mapChilds"> {service.serviceName} </div>
-                                    <div className="Paid-mapChilds"> {service.clientName} </div>
-                                    <div className="Paid-mapChilds"> {service.contact} </div>
-                                    <div className="Paid-mapChilds"> {service.dateTime} </div>
-                                    <div className="Paid-mapChilds"> {service.preferredWorker} </div>
-                                    <div className="Paid-mapChilds"> {service.duration} </div>
+                                    <div className="Paid-mapChilds"> {service.service_id.name} </div>
+                                    <div className="Paid-mapChilds"> {service.user_id.name} </div>
+                                    <div className="Paid-mapChilds"> {service.user_id.phone} </div>
+                                    <div className="Paid-mapChilds"> {service.appointment_time} </div>
+                                    <div className="Paid-mapChilds"> {service.worker_id.name} </div>
+                                    <div className="Paid-mapChilds"> {service.service_id.duration} </div>
                                     <div className="pay-Paid-btn" onClick={handlePopup}>Payment info</div>
                                 </div>
                             </div>
