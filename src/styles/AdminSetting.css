@@ -1,0 +1,9 @@
+.Admin-setting{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.Admin-setting-main{
+    display: flex;
+    flex-direction: column;
+}

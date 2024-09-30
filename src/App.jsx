@@ -19,6 +19,7 @@ import PaidAppointment from './component/PaidAppointment.jsx'
 import AllAppointments from './component/AllAppointments.jsx'
 import NewAppointment from "./component/NewAppointment.jsx"
 import AppointmentWorkers from "./component/AppointmentWorker.jsx"
+import AdminSetting from './component/AdminSettings.jsx'
 
 import SidebarComponent from './Sidebars/SidebarComponent.jsx'
 import Header from './Sidebars/Header.jsx'
@@ -51,6 +52,7 @@ function App() {
           <Route path='/AllAppointments' element={<AllAppointments />}></Route>
           <Route path='/NewAppointment' element={<NewAppointment />}></Route>
           <Route path='/AppointmentWorkers' element={<AppointmentWorkers />}></Route>
+          <Route path='/AdminSetting' element={<AdminSetting />}></Route>
 
           <Route path="/SidebarComponent" element={<SidebarComponent />}></Route>
           <Route path="/Header" element={<Header />}></Route>
