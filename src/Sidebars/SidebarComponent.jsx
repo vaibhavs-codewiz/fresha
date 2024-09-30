@@ -14,6 +14,7 @@ import { IoMdLogOut } from "react-icons/io";
 
 function SidebarComponent(prop) {
     const [activeAppointment, setActiveAppointment] = useState(prop.active.currentActive);
+
     const handleSetActive = (appointment) => {
         setActiveAppointment(appointment);
     };
