@@ -1,0 +1,79 @@
+.new-appoint-worker {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.new-appoint-worker-main {
+  width: calc(100% - 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-appoint-worker-wrapper {
+  height: 75%;
+  width: 90%;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+.new-appoint-worker-heading {
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 550;
+}
+.new-appoint-worker-heading2 {
+  font-size: 20px;
+  font-weight: 550;
+  height: 100px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.new-appoint-worker-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.img-card{
+    height: 150px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #fff;
+    
+    img{
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+    h2{
+        font-weight: 550;
+    }
+    p{
+        color: rgba(85, 84, 84, 0.532);
+    }
+}
+.create-appointment-btn{
+     width: 20%;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4A90E2;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  bottom: 16%;
+  left: 49%;
+}
+.img-card-parent{
+    display: flex;
+}

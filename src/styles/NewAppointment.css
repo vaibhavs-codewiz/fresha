@@ -10,19 +10,99 @@
     align-items: center;
 }
 .new-appoint-content-wrapper{
-    height: 80%;
+    height: 75%;
     width: 90%;
     margin-left: 20px;
     border-radius: 20px;
 }
 .new-appoint-heading{
-    margin: 10px;
-
+    margin: 5px;
+ font-size: 20px;
+ font-weight: 550;
 }
 
 .new-appoint-content{
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: #fff;
     border-radius: 20px;
+}
+
+/* ======= form css ===== */
+.form-container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 0 0 40%;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 550;
+  margin-bottom: 8px;
+  color: #4A4A4B;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 40px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #f5F6Fa;
+}
+
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #999;
+}
+
+.select-worker-btn {
+  width: 20%;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4A90E2;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  bottom: 16%;
+  left: 49%;
+}
+
+.select-worker-btn:hover {
+  background-color: #3a78c2;
 }

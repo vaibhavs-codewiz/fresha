@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./component/Details.jsx";
 import Booking from "./component/Booking.jsx";
@@ -20,6 +21,7 @@ import NewAppointment from "./component/NewAppointment.jsx";
 import SidebarComponent from "./Sidebars/SidebarComponent.jsx";
 import Header from "./Sidebars/Header.jsx";
 
+
 function App() {
 
   return (
@@ -34,16 +36,19 @@ function App() {
           <Route path="/Appointment/User_profile" element={<User_profile />}></Route>
           <Route path="/Appointment" element={<Appointment />}></Route>
           <Route path="/Select_professional" element={<Select_professional />}></Route>
-          <Route path="/Reschedule_appointments" element={<Reschedule_appointments />}></Route>
-          <Route path="/SalesDashboard" element={<SalesDashboard />}></Route>
-          <Route path="/WorkerDashboard" element={<WorkerDashboard />}></Route>
-          <Route path="/StockItems" element={<StockItems />}></Route>
-          <Route path="/Pending_appointments" element={<Pending_appointments />}></Route>
-          <Route path="/Confirm_Appointments" element={<Confirm_Appointments />}></Route>
-          <Route path="/CheckinAppointments" element={<CheckinAppointments />}></Route>
-          <Route path="/PaidAppointment" element={<PaidAppointment />}></Route>
-          <Route path="/AllAppointments" element={<AllAppointments />}></Route>
-          <Route path="/NewAppointment" element={<NewAppointment />}></Route>
+
+          <Route path='/Reschedule_appointments' element={<Reschedule_appointments />}></Route>
+          <Route path='/SalesDashboard' element={<SalesDashboard />}></Route>
+          <Route path='/WorkerDashboard' element={<WorkerDashboard />}></Route>
+          <Route path='/StockItems' element={<StockItems />}></Route>
+          <Route path='/Pending_appointments' element={<Pending_appointments />}></Route>
+          <Route path='/Confirm_Appointments' element={<Confirm_Appointments />}></Route>
+          <Route path='/CheckinAppointments' element={<CheckinAppointments />}></Route>
+          <Route path='/PaidAppointment' element={<PaidAppointment />}></Route>
+          <Route path='/AllAppointments' element={<AllAppointments />}></Route>
+          <Route path='/NewAppointment' element={<NewAppointment />}></Route>
+          <Route path='/AppointmentWorkers' element={<AppointmentWorkers />}></Route>
+
 
           <Route path="/SidebarComponent" element={<SidebarComponent />}></Route>
           <Route path="/Header" element={<Header />}></Route>

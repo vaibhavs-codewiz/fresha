@@ -3,12 +3,13 @@
   justify-content: center;
   width: 100%;
 }
-.dashboard-icon button{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    background: none;
-    border: none;
+.dashboard-icon button {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: none;
+  border: none;
+  width: 100%;
 }
 .Paid-sidebar {
   width: 280px;
@@ -16,41 +17,50 @@
   background-color: #f3f5fa;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: relative;
-  gap: 30px;
-  padding: 20px;
+  padding: 0px;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .Paid-sidebar-top {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   height: 25%;
   width: 80%;
   position: absolute;
-  top: 18%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-bottom: 1px solid rgba(170, 167, 167, 0.516);
   text-align: left;
   gap: 20px;
 }
+.paid-sidebar-top-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 70%;
+  width: 50%;
+  white-space: nowrap;
+  text-align: center;
+  gap: 20px;
+}
 .Paid-sidebar2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: 70%;
   width: 100%;
   position: absolute;
-  top: 35%;
+  top: 30%;
   margin-left: -20px;
 }
 
 .Paid-navigation {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(170, 167, 167, 0.516);
   width: 100%;
   display: flex;
@@ -60,21 +70,45 @@
 .Paid-navigation ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .Paid-navigation ul li {
-  padding: 10px 0;
+ padding: 10px 15px; 
   cursor: pointer;
+  width: 80%; 
+  box-sizing: border-box; 
+  text-align: left;
+  align-self: center;
 }
+.Paid-navigation-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  height: 70%;
+  width: 100%;
+  white-space: nowrap;
+  text-align: left;
+  gap: 0px;
 
+}
+#padding-left2{
+  padding-left: 15px;
+}
+#padding-left4{
+  padding-right: 25px;
+}
 .Paid-navigation ul li.active {
   background-color: #0096ff;
   color: white;
   padding: 10px;
   border-radius: 5px;
 }
-.Paid-active{
-    background-color: #0096ff;
+.Paid-active {
+  background-color: #0096ff;
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -86,13 +120,17 @@
   gap: 10px;
   position: absolute;
   top: 70%;
+  align-items: flex-start;
 }
 
-.Paid-bottom button {
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #ddd;
-  cursor: pointer;
+
+#btn1{
+  border: none;
+  background-color: #f3f5fa;
+}
+#btn2{
+  border: none;
+  background-color: #f3f5fa;
 }
 .small-font {
   font-size: 14px;

@@ -19,11 +19,17 @@ function Confirm_Appointments() {
           }
         );
 
+
+    const handlePopup = (clientName) => {
+        setClientName(clientName);  
+        setIsPopupVisible(true);
+
         setAppointments(response.data.data);
         console.log(response);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+
     };
 
     fetchData();

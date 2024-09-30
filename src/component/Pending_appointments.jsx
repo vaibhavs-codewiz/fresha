@@ -97,6 +97,8 @@ function Pending_appointments() {
                         </div>
                     </div>
                 </div>
+                
+
         <div className="pending-item1">
           <h2 className="">Pending Appointments</h2>
           <div className="pending-item-header">
@@ -104,9 +106,9 @@ function Pending_appointments() {
             <div className="pending-services">Client Name</div>
             <div className="pending-services">Contact</div>
             <div className="pending-services">Date and Time of Appointment</div>
-            <div className="pending-services">Preferred Worker</div>
             <div className="pending-services">Duration</div>
             <div className="pending-services">Assign New Worker</div>
+            <div className="pending-services">Preferred Worker</div>
             <div className="pending-services">Cancel</div>
           </div>
 
@@ -126,13 +128,12 @@ function Pending_appointments() {
                   <div className="pending-mapChilds">
                     {service.appointment_time}
                   </div>
-                  <div className="pending-mapChilds">
-                    {service.worker_id.name}
-                  </div>
+                
                   <div className="pending-mapChilds">
                     {service.service_id.duration}
                   </div>
-                  <div className="pending-mapChilds assign-pending-btn">
+                  
+                  <div className="assign-pending-btn">
                     <select
                       value={selectedWorkers[service._id] || ""}
                       onChange={(event) =>
@@ -149,6 +150,7 @@ function Pending_appointments() {
                       ))}
                     </select>
                   </div>
+                  <div className="confirm-pending-btn">confirm</div>
                   <button
                     className="cancel-pending-btn"
                     onClick={() => handleCancel(service._id)}
