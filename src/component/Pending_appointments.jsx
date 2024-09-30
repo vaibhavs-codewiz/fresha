@@ -2,6 +2,7 @@ import "../styles/Pending_appointments.css"
 import SidebarComponent from "../Sidebars/SidebarComponent";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { VITE_BASEURL } from "../config";
 
 
 function Pending_appointments() {
@@ -14,7 +15,7 @@ function Pending_appointments() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/appointment/getPendingAppointments",
+          `${VITE_BASEURL}/appointment/getPendingAppointments`,
           {
             withCredentials: true,
           }
@@ -29,7 +30,7 @@ function Pending_appointments() {
     const fetchWorkers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/worker/getAllWorkers"
+         `${VITE_BASEURL}/worker/getAllWorkers`
         );
         setWorkers(response.data);
       } catch (error) {
@@ -54,7 +55,7 @@ function Pending_appointments() {
   const handleCancel = async (appointmentId) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/appointment/cancelAppointment/${appointmentId}`,
+        `${VITE_BASEURL}/appointment/cancelAppointment/${appointmentId}`,
         {},
         {
           withCredentials: true,
