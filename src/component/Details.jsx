@@ -3,13 +3,14 @@ import "../styles/Details.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { VITE_BASEURL } from "../config";
 
 function Details() {
   const [services, setServices] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/service/getAllServices", {
+        const response = await axios.get(`${VITE_BASEURL}/service/getAllServices`, {
           withCredentials: true, // For cookies, if needed
         });
 
@@ -45,7 +46,7 @@ function Details() {
                 <div className="detailsCard" key={index}>
                   <div className="map">
                     <div className="mapChilds mapImgDiv">
-                      <img src={`http://localhost:3000/${service.image}`} alt="" />
+                      <img src={`${VITE_BASEURL}/${service.image}`} alt="" />
                     </div>
                     <div className="mapChilds"> {service.name} </div>
                     <div className="mapChilds">{service.price} </div>

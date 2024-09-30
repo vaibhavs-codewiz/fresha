@@ -87,7 +87,6 @@
   h2 {
     padding: 0.5vw;
     font-weight: bolder;
-    font-size: x-large;
     align-self: flex-start;
     padding-left: 1.5vw;
   }
@@ -100,6 +99,8 @@
   padding: 1vw;
   margin-bottom: 20px;
   background-color: #F5F6FA;
+  align-items: center;
+
   p {
     font-weight: bold;
   }
@@ -120,7 +121,7 @@
   width: 12%;
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+
 }
 .pending-detailsCard {
   width: 100%;
@@ -140,6 +141,9 @@
  width: 12%;
 }
 .cancel-pending-btn{
+  color: white;
+  font-weight: 300;
+  height: max-content;
     border-radius: 20px;
     width: 80px;
     background-color: red;
@@ -170,12 +174,14 @@
     padding: 10px 20px;
    margin-right: 40px;
    margin-left: -40px;
+  height: max-content;
 }
 
 
 .assign-pending-btn select {
-    width: 90%; 
-    font-size: 12px; 
+   width: 100%; /* Ensures the select takes the full width of its container */
+    padding: 5px; /* Adds a bit of padding for better appearance *//* Adjusts the font size to match the design */
+
     cursor: pointer;
     background-color: rgba(255, 200, 0, 0);
 }

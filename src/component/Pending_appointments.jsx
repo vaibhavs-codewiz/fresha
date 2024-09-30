@@ -1,99 +1,78 @@
 import "../styles/Pending_appointments.css"
 import SidebarComponent from "../Sidebars/SidebarComponent";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { VITE_BASEURL } from "../config";
+
 
 function Pending_appointments() {
-    const pendingServices = [
+  const [appointments, setAppointments] = useState([]);
+  const [workers, setWorkers] = useState([]);
+  const [selectedWorkers, setSelectedWorkers] = useState({}); // Store selected workers for each appointment
+
+  useEffect(() => {
+    // API to fetch Appointments
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${VITE_BASEURL}/appointment/getPendingAppointments`,
+          {
+            withCredentials: true,
+          }
+        );
+        setAppointments(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // API to fetch Workers
+    const fetchWorkers = async () => {
+      try {
+        const response = await axios.get(
+         `${VITE_BASEURL}/worker/getAllWorkers`
+        );
+        setWorkers(response.data);
+      } catch (error) {
+        console.error("Error fetching workers:", error);
+      }
+    };
+
+    fetchWorkers();
+    fetchData();
+  }, []);
+
+  // Handle selecting a new worker for an appointment
+  const handleSelectChange = (appointmentId, event) => {
+    const newWorkerId = event.target.value;
+    setSelectedWorkers((prevSelectedWorkers) => ({
+      ...prevSelectedWorkers,
+      [appointmentId]: newWorkerId,
+    }));
+  };
+
+  // API to handle cancel appointment button click
+  const handleCancel = async (appointmentId) => {
+    try {
+      const response = await axios.put(
+        `${VITE_BASEURL}/appointment/cancelAppointment/${appointmentId}`,
+        {},
         {
-            serviceName: "Haircut",
-            clientName: "John Doe",
-            contact: "+1-202-555-0167",
-            dateTime: "2024-09-28 14:30",
-            preferredWorker: "Alice Johnson",
-            duration: "45 mins",
-            assignEmp: "David Smith",
-            cancel: false,
-        },
-        {
-            serviceName: "Massage Therapy",
-            clientName: "Emma Williams",
-            contact: "+1-303-555-0123",
-            dateTime: "2024-09-28 16:00",
-            preferredWorker: "James Anderson",
-            duration: "1 hour",
-            assignEmp: "Sarah Brown",
-            cancel: false,
-        },
-        {
-            serviceName: "Manicure",
-            clientName: "Sophia Martinez",
-            contact: "+1-408-555-0198",
-            dateTime: "2024-09-29 11:00",
-            preferredWorker: "Olivia Garcia",
-            duration: "30 mins",
-            assignEmp: "Ethan Taylor",
-            cancel: true,
-        },
-        {
-            serviceName: "Facial Treatment",
-            clientName: "Michael Johnson",
-            contact: "+1-212-555-0143",
-            dateTime: "2024-09-30 13:45",
-            preferredWorker: "Liam Davis",
-            duration: "1 hour 30 mins",
-            assignEmp: "Mia White",
-            cancel: false,
-        },
-        {
-            serviceName: "Pedicure",
-            clientName: "Isabella Wilson",
-            contact: "+1-415-555-0175",
-            dateTime: "2024-09-30 15:30",
-            preferredWorker: "Charlotte Moore",
-            duration: "1 hour",
-            assignEmp: "Noah Green",
-            cancel: false,
-        },
-        {
-            serviceName: "Massage Therapy",
-            clientName: "Emma Williams",
-            contact: "+1-303-555-0123",
-            dateTime: "2024-09-28 16:00",
-            preferredWorker: "James Anderson",
-            duration: "1 hour",
-            assignEmp: "Sarah Brown",
-            cancel: false,
-        },
-        {
-            serviceName: "Manicure",
-            clientName: "Sophia Martinez",
-            contact: "+1-408-555-0198",
-            dateTime: "2024-09-29 11:00",
-            preferredWorker: "Olivia Garcia",
-            duration: "30 mins",
-            assignEmp: "Ethan Taylor",
-            cancel: true,
-        },
-        {
-            serviceName: "Facial Treatment",
-            clientName: "Michael Johnson",
-            contact: "+1-212-555-0143",
-            dateTime: "2024-09-30 13:45",
-            preferredWorker: "Liam Davis",
-            duration: "1 hour 30 mins",
-            assignEmp: "Mia White",
-            cancel: false,
-        },
-        {
-            serviceName: "Pedicure",
-            clientName: "Isabella Wilson",
-            contact: "+1-415-555-0175",
-            dateTime: "2024-09-30 15:30",
-            preferredWorker: "Charlotte Moore",
-            duration: "1 hour",
-            assignEmp: "Noah Green",
-            cancel: false,
-        },
-    ];
+          withCredentials: true,
+        }
+      );
+      console.log("Appointment status updated:", response.data);
+      // Optionally, update your UI to reflect the status change
+      setAppointments((prevAppointments) =>
+        prevAppointments.filter(
+          (appointment) => appointment._id !== appointmentId
+        )
+      );
+    } catch (error) {
+      console.error("Error updating appointment status:", error);
+    }
+  };
+
 
     return (
         <div className="pending-appoint-container">
@@ -118,49 +97,74 @@ function Pending_appointments() {
                         </div>
                     </div>
                 </div>
-                <div className="pending-item1">
-                    <h2 className="">Services</h2>
-                    <div className="pending-item-header">
-                        <div className="pending-services">ServiceName </div>
-                        <div className="pending-services">client name</div>
-                        <div className="pending-services">contact</div>
-                        <div className="pending-services">Date-Time</div>
-                        <div className="pending-services">Duration</div>
-                        <div className="pending-services">assign emp</div>
-                        <div className="pending-services">preferred-worker</div>
-                        <div className="pending-services">cancel</div>
-                    </div>
+                
 
-                    <div className="stock-item-parent">
-                        {pendingServices.map((service, index) => (
-                            <div className="pending-detailsCard" key={index}>
-                                <div className="pending-map">
-                                    <div className="pending-mapChilds"> {service.serviceName} </div>
-                                    <div className="pending-mapChilds"> {service.clientName} </div>
-                                    <div className="pending-mapChilds"> {service.contact} </div>
-                                    <div className="pending-mapChilds"> {service.dateTime} </div>
-                                    <div className="pending-mapChilds"> {service.duration} </div>
-                                    <div className=" assign-pending-btn">
-                                        <div>
-                                            <label htmlFor={`worker-${index}`}></label> {/* Use unique ID for each select */}
-                                            <select name="assign" id={`worker-${index}`} onClick={(e) => e.stopPropagation()}>
-                                                <option value="" disabled selected hidden>Assign</option>
-                                                <option value="rahul">Rahul</option>
-                                                <option value="mudit">Mudit</option>
-                                                <option value="yash">Yash</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="confirm-pending-btn">confirm</div>
-                                    <div className=" cancel-pending-btn">cancel</div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+        <div className="pending-item1">
+          <h2 className="">Pending Appointments</h2>
+          <div className="pending-item-header">
+            <div className="pending-services">Service Name </div>
+            <div className="pending-services">Client Name</div>
+            <div className="pending-services">Contact</div>
+            <div className="pending-services">Date and Time of Appointment</div>
+            <div className="pending-services">Duration</div>
+            <div className="pending-services">Assign New Worker</div>
+            <div className="pending-services">Preferred Worker</div>
+            <div className="pending-services">Cancel</div>
+          </div>
+
+          <div className="stock-item-parent">
+            {appointments.map((service) => (
+              <div className="detailsCard" key={service._id}>
+                <div className="pending-map">
+                  <div className="pending-mapChilds">
+                    {service.service_id.name}
+                  </div>
+                  <div className="pending-mapChilds">
+                    {service.user_id.name}
+                  </div>
+                  <div className="pending-mapChilds">
+                    {service.user_id.phone}
+                  </div>
+                  <div className="pending-mapChilds">
+                    {service.appointment_time}
+                  </div>
+                
+                  <div className="pending-mapChilds">
+                    {service.service_id.duration}
+                  </div>
+                  
+                  <div className="assign-pending-btn">
+                    <select
+                      value={selectedWorkers[service._id] || ""}
+                      onChange={(event) =>
+                        handleSelectChange(service._id, event)
+                      }
+                    >
+                      <option value="" disabled>
+                        Select a worker
+                      </option>
+                      {workers.map((worker) => (
+                        <option key={worker._id} value={worker._id}>
+                          {worker.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="confirm-pending-btn">confirm</div>
+                  <button
+                    className="cancel-pending-btn"
+                    onClick={() => handleCancel(service._id)}
+                  >
+                    Cancel
+                  </button>
                 </div>
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Pending_appointments
+export default Pending_appointments;
